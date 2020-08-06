@@ -55,8 +55,8 @@
   <ItemGroup>
     <Compile Include="Accessory.cs" />
     <Compile Include="Drink.cs" />
-    <Compile Include="DrinkCard.cs" />
     <Compile Include="DrinkContext.cs" />
+    <Compile Include="DrinkCrud.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Ingredient.cs" />
     <Compile Include="Item.cs" />
