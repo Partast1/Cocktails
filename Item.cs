@@ -16,9 +16,7 @@ namespace Cocktails
             get { return ingredient; }
             set { ingredient = value; }
         }
-
         public int Unit { get => unit; set => unit = value; }
-
         public Item()
         {
 

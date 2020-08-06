@@ -10,12 +10,6 @@ namespace Cocktails
     {
         static void Main(string[] args)
         {
-            //List<Item> items = new List<Item>()
-            //{
-            //    new Item(2,new Liquid("test", "test", false)),
-            //    new Item(2, new Liquid("test2", "test2", true))
-            //};
-           
             Ingredient ing = new Ingredient();
             DrinkCard dk = new DrinkCard();
 
@@ -34,16 +28,7 @@ namespace Cocktails
                     
 
             }
-            ctx.Ingredients.Add(ing);
-            //DrinkContext dctx = new DrinkContext();
-            //Drink drik = new Drink("Barcadis", items);
-
-            //DrinkContext dcxt
-        
-                //ite.Items = ctx.items.Where(o => o.Id == ite.Id);
-
-
-            
+            ctx.Ingredients.Add(ing);  
         }
     }
 }

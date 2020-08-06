@@ -16,8 +16,6 @@ namespace Cocktails
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM Drinks";
-
-
                 SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
                 SqlDataReader dataReader = cmd.ExecuteReader();
@@ -29,31 +27,22 @@ namespace Cocktails
                         for (int i = 0; i < dataReader.FieldCount; i++)
                         {
                             Console.WriteLine("{0}", dataReader.GetValue(i));
-
-
-
                         }
-
                     }
                 }
                 else
                 {
                     Console.WriteLine("No data found.");
                 }
-
                 conn.Close();
             }
-
         }
         public void DeleteDrink(int input)
         {
-            
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 int uinput = input;
                 string query = " @DELETE FROM Drinks WHERE ID=@uinput";
-                //string query = " SELECT * FROM Drinks";
-              
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
@@ -63,15 +52,10 @@ namespace Cocktails
                 {
                     while (dataReader.Read())
                     {
-
                         for (int i = 0; i < dataReader.FieldCount; i++)
                         {
                             Console.WriteLine("{0}", dataReader.(i));
-
-
-
                         }
-
                     }
                 }
                 else

@@ -19,9 +19,7 @@ namespace Cocktails
             }
             public Accessory(string cName, string cType) : base(cName)
             {
-
                 type = cType;
             }
         }
-    
 }

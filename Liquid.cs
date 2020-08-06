@@ -19,7 +19,6 @@ namespace Cocktails
         }
         public Liquid(string cName, string cColor, bool cAlkohol) : base(cName)
         {
-
             color = cColor;
             alcohol = cAlkohol;
         }

@@ -17,8 +17,6 @@ namespace Cocktails
             set { items = value; }
         }
 
-
-
         public string Name { get => name; set => name = value; }
 
         public Drink()
@@ -29,8 +27,6 @@ namespace Cocktails
         {
             name = cName;
             Items = cItems;
-
         }
-
     }
 }
