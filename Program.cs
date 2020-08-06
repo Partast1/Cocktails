@@ -11,7 +11,7 @@ namespace Cocktails
         static void Main(string[] args)
         {
             Ingredient ing = new Ingredient();
-            DrinkCard dk = new DrinkCard();
+            DrinkCrud dc = new DrinkCrud();
 
             DrinkContext ctx = new DrinkContext();
             Console.WriteLine("Press 1 for drinks: press 2 for delete: press 3 for updating a drink");
@@ -19,11 +19,15 @@ namespace Cocktails
             switch (input)
             {
                 case 1:
-                    dk.GetDrinks();
+                    var displayDrinks = dc.GetDrinks();
+                    foreach ( Drink drink in displayDrinks)
+                    {
+                        Console.WriteLine(drink.Name);
+                    }
                     break;
                 case 2:
                     int inputDel = Convert.ToInt32(Console.ReadLine());
-                    dk.DeleteDrink(inputDel);
+                    dc.DeleteDrink(inputDel);
                     break;
                     
 

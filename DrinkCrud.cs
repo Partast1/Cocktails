@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Cocktails
 {
-    class DrinkCard
+    class DrinkCrud
     {
         public string connString = @"Server=(localdb)\MSSQLLocalDB;Database=CocktailDB;Trusted_Connection = True;";
 
-        public void GetDrinks()
+        public List<Drink> GetDrinks()
         {
+            List<Drink> drinks = new List<Drink>();
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM Drinks";
@@ -26,7 +27,7 @@ namespace Cocktails
 
                         for (int i = 0; i < dataReader.FieldCount; i++)
                         {
-                            Console.WriteLine("{0}", dataReader.GetValue(i));
+                            drinks.Add((Drink)dataReader.GetValue(i));
                         }
                     }
                 }
@@ -35,6 +36,8 @@ namespace Cocktails
                     Console.WriteLine("No data found.");
                 }
                 conn.Close();
+                return drinks;
+
             }
         }
         public void DeleteDrink(int input)
