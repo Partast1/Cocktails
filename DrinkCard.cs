@@ -9,8 +9,11 @@ namespace Cocktails
 {
     class DrinkCard
     {
-        public string connString = @"Server=(localdb)\MSSQLLocalDB;Database=CocktailDB;Trusted_Connection = True;";
+        
+               public string connString = @"Server=(localdb)\MSSQLLocalDB;Database=CocktailDB;Trusted_Connection = True;";
 
+        //Dette er et DAL lags object og det betyder at det skal servicere din applikation. Du kan derfor ikke have en void metode til at hente alle drinks! Der skal returneres en liste i stedet.
+        //Det er rigtigt svært at give feedback når jeg ikke har et klassediagram!
         public void GetDrinks()
         {
             using (SqlConnection conn = new SqlConnection(connString))
@@ -28,7 +31,9 @@ namespace Cocktails
 
                         for (int i = 0; i < dataReader.FieldCount; i++)
                         {
+                            //Ingen console writelines herinde
                             Console.WriteLine("{0}", dataReader.GetValue(i));
+                            
 
 
 
